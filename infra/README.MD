@@ -99,8 +99,6 @@ Pour aller plus loin vous pouvez aussi builder votre frontend de la même maniè
 
 (EN) 
 
-Here's the translation to English:
-
 1. Download the Infra, Backend, and Frontend folders and create GitLab repositories (or other Git version control repositories).
 
 2. Install the prerequisites, including Ansible, Terraform, Python3, Pip, AWS CLI.
