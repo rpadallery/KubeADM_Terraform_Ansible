@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  frontend:
+    image: registry.gitlab.com/projets-persos4/iac/frontend
+    ports:
+      - "3000:3000"  

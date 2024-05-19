@@ -1,0 +1,35 @@
+- name: Basic Setup
+  hosts: frontend
+  gather_facts: false
+  become: true
+  handlers:
+    - name: RestartNginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+  tasks:
+    - name: Copy docker-compose.yml
+      ansible.builtin.copy:
+        src: "./files/docker-compose.yml"
+        dest: "/home/admin/"
+
+    - name: Start Docker services
+      ansible.builtin.command: |
+        sudo docker compose up -d 
+ 
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        update_cache: true
+
+    - name: Copy file with owner and perms
+      ansible.builtin.copy:
+        src: "./files/frontendgallery.raphaeldallery.tech"
+        dest: /etc/nginx/sites-enabled
+        owner: admin
+        group: root
+      notify: RestartNginx
+
+    - name: Reload Nginx just to be sure
+      ansible.builtin.command: sudo systemctl reload nginx 
+
