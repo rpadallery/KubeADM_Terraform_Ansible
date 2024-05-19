@@ -1,5 +1,5 @@
-#Uncomment these lines for program to work
-#AWS_ACCESS_KEY_ID: 
-#AWS_SECRET_ACCESS_KEY:  
-#S3_REGION: 
-#S3_BUCKET: 
+#Add specified variables for program to work
+AWS_ACCESS_KEY_ID: 
+AWS_SECRET_ACCESS_KEY:  
+S3_REGION: 
+S3_BUCKET: 
